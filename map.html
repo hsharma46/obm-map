@@ -35,7 +35,10 @@
 				iconSize: [25, 41]}),
 			greenIcon = L.icon({
 				iconUrl: 'green_loc.png',
-				iconSize: [25, 41]});
+				iconSize: [25, 41]}),				
+			yellowIcon = L.icon({
+				iconUrl: 'yellow_loc.png',
+				iconSize: [25, 41]});;
 	   
 
                     for (let i = 0; i < data.length; i++) {
@@ -43,11 +46,11 @@
                         if (singlePoints.length == 2) {
 			    if(i==0)
 				{
-	                            L.marker([singlePoints[0], singlePoints[1]],{icon:greenIcon}).addTo(mymap);
+	                            L.marker([singlePoints[0], singlePoints[1]],{icon:yellowIcon}).addTo(mymap);
 				}
 			    else if(i== data.length-1)
 				{
-	                            L.marker([singlePoints[0], singlePoints[1]],{icon:redIcon}).addTo(mymap);
+	                            L.marker([singlePoints[0], singlePoints[1]],{icon:greenIcon}).addTo(mymap);
 				}
 			    else{
 				    L.marker([singlePoints[0], singlePoints[1]]).addTo(mymap);
