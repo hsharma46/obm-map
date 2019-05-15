@@ -30,18 +30,29 @@
                     var data = points.split('|')
 		    var line=[];
 			
-	var redIcon = L.icon({
-				iconUrl: 'https://comosaconnect.org/wp-content/uploads/2017/04/os_directory.png?w=48',
+			    var redIcon = L.icon({
+				iconUrl: 'red_loc.png',
 				iconSize: [48, 48]}),
-	greenIcon = L.icon({
-				iconUrl: 'https://comosaconnect.org/wp-content/uploads/2017/04/os_directory.png?w=48',
+			greenIcon = L.icon({
+				iconUrl: 'green_loc.png',
 				iconSize: [48, 48]});
 	   
 
                     for (let i = 0; i < data.length; i++) {
                         var singlePoints = data[i].split("~");
                         if (singlePoints.length == 2) {
-                            L.marker([singlePoints[0], singlePoints[1]],{icon:redIcon}).addTo(mymap);
+			    if(i==0)
+				{
+	                            L.marker([singlePoints[0], singlePoints[1]],{icon:greenIcon}).addTo(mymap);
+				}
+			    else if(i== data.length-1)
+				{
+	                            L.marker([singlePoints[0], singlePoints[1]],{icon:redIcon}).addTo(mymap);
+				}
+			    else{
+				    L.marker([singlePoints[0], singlePoints[1]]).addTo(mymap);
+				}
+
 			    line.push([singlePoints[0], singlePoints[1]]);
                         }
 
