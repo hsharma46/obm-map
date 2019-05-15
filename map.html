@@ -32,7 +32,7 @@
 			
 			    var redIcon = L.icon({
 				iconUrl: 'red_loc.png',
-				iconSize: [25, 41]}),
+				iconSize: [20, 20]}),
 			greenIcon = L.icon({
 				iconUrl: 'green_loc.png',
 				iconSize: [25, 41]}),				
@@ -53,7 +53,7 @@
 	                            L.marker([singlePoints[0], singlePoints[1]],{icon:greenIcon}).addTo(mymap);
 				}
 			    else{
-				    L.marker([singlePoints[0], singlePoints[1]]).addTo(mymap);
+				    L.marker([singlePoints[0], singlePoints[1]],{icon:redIcon}).addTo(mymap);
 				}
 
 			    line.push([singlePoints[0], singlePoints[1]]);
